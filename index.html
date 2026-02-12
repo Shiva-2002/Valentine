@@ -1,0 +1,176 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+  <meta charset="UTF-8">\
+  <title>Valentine \uc0\u55357 \u56472 </title>\
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+\
+  <style>\
+    body \{\
+      margin: 0;\
+      height: 100vh;\
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);\
+      display: flex;\
+      justify-content: center;\
+      align-items: center;\
+      font-family: Arial, sans-serif;\
+      overflow: hidden;\
+    \}\
+\
+    .card \{\
+      background: white;\
+      padding: 30px;\
+      border-radius: 20px;\
+      text-align: center;\
+      width: 90%;\
+      max-width: 350px;\
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);\
+      z-index: 2;\
+    \}\
+\
+    h1 \{\
+      color: #ff4d6d;\
+      margin-bottom: 10px;\
+    \}\
+\
+    .name \{\
+      font-size: 32px;\
+      font-weight: bold;\
+      color: #ff006e;\
+      animation: glow 1.5s infinite alternate;\
+    \}\
+\
+    @keyframes glow \{\
+      from \{ text-shadow: 0 0 5px #ff4d6d; \}\
+      to \{ text-shadow: 0 0 15px #ff006e; \}\
+    \}\
+\
+    .buttons \{\
+      position: relative;\
+      height: 120px;\
+      margin-top: 20px;\
+    \}\
+\
+    button \{\
+      padding: 12px 25px;\
+      font-size: 18px;\
+      border-radius: 10px;\
+      border: none;\
+      cursor: pointer;\
+      position: absolute;\
+    \}\
+\
+    #yes \{\
+      background: #38b000;\
+      color: white;\
+      left: 50%;\
+      transform: translateX(-50%);\
+    \}\
+\
+    #no \{\
+      background: #ff4d6d;\
+      color: white;\
+      left: 10%;\
+    \}\
+\
+    /* Hearts */\
+    .heart \{\
+      position: fixed;\
+      top: -10px;\
+      font-size: 20px;\
+      animation: fall linear infinite;\
+    \}\
+\
+    @keyframes fall \{\
+      to \{\
+        transform: translateY(110vh);\
+      \}\
+    \}\
+\
+    /* WhatsApp message */\
+    .popup \{\
+      position: fixed;\
+      inset: 0;\
+      background: rgba(0,0,0,0.6);\
+      display: none;\
+      justify-content: center;\
+      align-items: center;\
+      z-index: 3;\
+    \}\
+\
+    .chat \{\
+      background: #dcf8c6;\
+      padding: 20px;\
+      border-radius: 15px;\
+      width: 80%;\
+      max-width: 300px;\
+      text-align: left;\
+      font-size: 16px;\
+    \}\
+\
+    .chat strong \{\
+      color: #075e54;\
+    \}\
+  </style>\
+</head>\
+<body>\
+\
+<audio autoplay loop>\
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">\
+</audio>\
+\
+<div class="card">\
+  <h1>Will you be my Valentine?</h1>\
+  <div class="name">Shruti \uc0\u55357 \u56470 </div>\
+\
+  <div class="buttons">\
+    <button id="yes" onclick="yesClicked()">Yes \uc0\u55357 \u56472 </button>\
+    <button id="no">No \uc0\u55357 \u56468 </button>\
+  </div>\
+</div>\
+\
+<div class="popup" id="popup">\
+  <div class="chat">\
+    <strong>You \uc0\u10084 \u65039 </strong><br><br>\
+    Yayyy!! \uc0\u55358 \u56688   \
+    I knew you\'92d say YES \uc0\u55357 \u56469   \
+    This Valentine just became special \uc0\u55357 \u56470 \
+  </div>\
+</div>\
+\
+<script>\
+  // No button escape\
+  const noBtn = document.getElementById("no");\
+  noBtn.addEventListener("mouseover", () => \{\
+    noBtn.style.left = Math.random() * 200 + "px";\
+    noBtn.style.top = Math.random() * 80 + "px";\
+  \});\
+\
+  // Yes click\
+  function yesClicked() \{\
+    document.getElementById("popup").style.display = "flex";\
+  \}\
+\
+  // Heart rain\
+  setInterval(() => \{\
+    const heart = document.createElement("div");\
+    heart.className = "heart";\
+    heart.innerText = "\uc0\u55357 \u56470 ";\
+    heart.style.left = Math.random() * 100 + "vw";\
+    heart.style.animationDuration = (2 + Math.random() * 3) + "s";\
+    document.body.appendChild(heart);\
+\
+    setTimeout(() => heart.remove(), 5000);\
+  \}, 300);\
+</script>\
+\
+</body>\
+</html>\
+}
